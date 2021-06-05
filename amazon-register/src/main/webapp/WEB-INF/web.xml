@@ -3,6 +3,5 @@
   <display-name>amazon-register</display-name>
   <welcome-file-list>
     <welcome-file>amazon_register.jsp</welcome-file>
-    
   </welcome-file-list>
 </web-app>
