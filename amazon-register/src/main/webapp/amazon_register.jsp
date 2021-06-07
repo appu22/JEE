@@ -10,10 +10,17 @@ input {
   width: 50%;
 }
 form{
+
+margin-left:20%;
+margin-right:20%;
+margin-top:5%;
 background-color: skyblue;
+padding: 0;
 }button:hover {
   opacity: 0.5;
 }
+submit{
+text-align: center;}
 </style>
 </head>
 <body bgcolor="clack" >
