@@ -57,16 +57,18 @@ public class SongsRegisterationServlet extends GenericServlet {
 		Iterator<SongsDto> iterator = allSongs.iterator();
 		PrintWriter writer = res.getWriter();
 		res.setContentType("text/html");
-		writer.print("<html><body bgcolor=skyblue>" +"<h1 style=margin-left:auto; margin-right: auto;>Songs List</h1>"+ "<table border=2 width=50% height=50%"
+		writer.print("<html><body bgcolor=skyblue >"+"<h1 style=margin-left:auto; margin-right: auto;>Songs List</h1>"+ "<table border=2 width=50% height=50%"
 				+ "style=margin-left:auto; margin-right: auto;>"
+				+ "<th>No </th>" 
 				+ "<th>Songsname</th>" 
 				+ "<th>Featuring</th>" 
 				+ "<th>Singer</th>" 
 				+ "<th>Duration</th>"
 				+ "<th>Language</th>" 
-				+ "<th>Lyricisit</th></tr>");
+				+ "<th>Lyricisit</th></tr>");  
+		
 		while (iterator.hasNext()) {
-			SongsDto songsDto = (SongsDto) iterator.next();
+			SongsDto songsDto =  iterator.next();
 			int id = songsDto.getId();
 			String songsName2 = songsDto.getSongsName();
 			String featuring2 = songsDto.getFeaturing();
@@ -74,18 +76,16 @@ public class SongsRegisterationServlet extends GenericServlet {
 			String duration2 = songsDto.getDuration();
 			String language = songsDto.getLanguage();
 			String lyricist2 = songsDto.getLyricist();
-			writer.print("<tr><td>" + songsName2 + "</td>" + "<td>" + featuring2 + "</td>"
+			writer.print("<tr>   <td>" +id+ "</td>   <td>" + songsName2 + "</td>" + "<td>" + featuring2 + "</td>"
 					+ "<td>" + singer2 + "</td>" + "<td>" + duration2 + "</td>" + "<td>" + language + "<td>" + lyricist2
 					+ "</td></tr>");
-
 		}
 		writer.print("</table> </body>");
-		writer.print(" <div style=margin-left:0; margin-right: auto;>CopyRight@appu2021</div> </br></html>");
+		writer.print("  style=margin-left:0; margin-right: auto;>CopyRight@appu2021</div> </br></html>");
 		// writer.print(allSongs);
 //		writer.print("text/html");
 		writer.print(" Thank you for Selecting song " + songsname);
 		System.out.println("Ended.......Servlet");
-
 	}
 
 }
