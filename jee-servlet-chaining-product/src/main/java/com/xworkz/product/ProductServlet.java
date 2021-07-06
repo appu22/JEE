@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -28,6 +29,16 @@ public class ProductServlet extends HttpServlet {
 		 * ui data with DB
 		 */
 
+		
+		
+		
+		Cookie cookie = new  Cookie("appucookie", productName);
+		
+		cookie.setMaxAge(5000);
+		
+		resp.addCookie(cookie);
+		
+		
 //		Adding to the req scope 
 		req.setAttribute("pname", productName);
 		req.setAttribute("pQty", qty);
